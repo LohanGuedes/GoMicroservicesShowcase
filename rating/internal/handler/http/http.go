@@ -20,7 +20,7 @@ func New(ctrl *rating.Controller) *Handler {
 	return &Handler{ctrl}
 }
 
-func (h *Handler) handle(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) Handle(w http.ResponseWriter, r *http.Request) {
 	recordID := model.RecordID(r.FormValue("id"))
 	if recordID == "" {
 		w.WriteHeader(http.StatusBadRequest)

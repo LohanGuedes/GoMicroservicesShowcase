@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	httphandler "github.com/lohanguedes/movie-microservices/metadata/internal/handler/http"
 	"github.com/lohanguedes/movie-microservices/rating/internal/controller/rating"
+	httphandler "github.com/lohanguedes/movie-microservices/rating/internal/handler/http"
 	"github.com/lohanguedes/movie-microservices/rating/internal/repository/memory"
 )
 
