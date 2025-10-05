@@ -41,7 +41,7 @@ func (r *Registry) Register(
 	return nil
 }
 
-func (r *Registry) Deregiste(
+func (r *Registry) Deregister(
 	ctx context.Context,
 	instanceID string,
 	serviceName string,

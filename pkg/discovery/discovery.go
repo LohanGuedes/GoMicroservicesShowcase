@@ -13,7 +13,7 @@ type Registry interface {
 	// Register creates a service instance record in the registry
 	Register(ctx context.Context, instanceID string, serviceName string, hostPort string) error
 	// Deregister removes a service instance record from the registry
-	Deregiste(ctx context.Context, instanceID string, serviceName string) error
+	Deregister(ctx context.Context, instanceID string, serviceName string) error
 	// ServiceAddresses return the list of addresses of active instances of the
 	// given service
 	ServiceAddresses(ctx context.Context, serviceID string) ([]string, error)
