@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/lohanguedes/movie-microservices/movie/internal/controller/movie"
@@ -49,7 +50,7 @@ func main() {
 	ctrl := movie.New(ratingGateway, metadataGateway)
 	h := httphandler.New(ctrl)
 	http.Handle("/movie", http.HandlerFunc(h.GetMovieDetails))
-	if err := http.ListenAndServe(":8083", nil); err != nil {
+	if err := http.ListenAndServe(":"+strconv.Itoa(port), nil); err != nil {
 		panic(err)
 	}
 }

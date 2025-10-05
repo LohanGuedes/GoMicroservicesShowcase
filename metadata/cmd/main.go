@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 	"time"
 
 	"github.com/lohanguedes/movie-microservices/metadata/internal/controller/metadata"
@@ -19,7 +20,7 @@ var serviceName = "metadata"
 
 func main() {
 	var port int
-	flag.IntVar(&port, "port", 8082, "API handler port")
+	flag.IntVar(&port, "port", 8081, "API handler port")
 	flag.Parse()
 
 	log.Printf("Staring the movie metadata service on port %d\n", port)
@@ -46,7 +47,7 @@ func main() {
 	h := httphandler.New(ctrl)
 
 	http.Handle("/metadata", http.HandlerFunc(h.GetMetadata))
-	if err := http.ListenAndServe(":8081", nil); err != nil {
+	if err := http.ListenAndServe(":"+strconv.Itoa(port), nil); err != nil {
 		panic(err)
 	}
 }
