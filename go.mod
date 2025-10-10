@@ -2,7 +2,10 @@ module github.com/lohanguedes/movie-microservices
 
 go 1.24.4
 
-require github.com/hashicorp/consul/api v1.14.0
+require (
+	github.com/hashicorp/consul/api v1.14.0
+	google.golang.org/protobuf v1.36.10
+)
 
 require (
 	github.com/armon/go-metrics v0.3.10 // indirect
